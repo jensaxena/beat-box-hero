@@ -1,0 +1,94 @@
+html {
+  font-size: 62.5%; /* 10px */
+}
+
+body {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(0,0,0,0.75)), url(images/background-graffiti-1500x750.jpg) no-repeat center / cover;
+  font-family: sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+  position: relative;
+}
+
+footer {
+  bottom: 0;
+  color: white;
+  left: 0;
+  font-size: calc(0.9rem + (1.4 - 0.9) * ((100vw - 320px) / (1500 - 320)));
+  position: absolute;
+  right: 0;
+  text-align: center;
+
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:active,
+a:focus,
+a:hover {
+  color: cyan;
+}
+
+h1 {
+  font-family: 'Permanent Marker', sans-serif;
+  font-size: calc(4rem + (42 - 4) * ((100vw - 320px) / (1500 - 320)));
+  margin: 0 auto 5vh;
+  text-align: center;
+  text-shadow: 0.5rem 0.5rem 0.5rem grey, -0.2rem 0 0.75rem white;
+}
+
+.keys {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  min-width: 320px;
+}
+
+.key {
+  background: rgba(0,0,0,0.75);
+  border: .4rem solid black;
+  border-radius: 50%;
+  margin: 0.5rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  max-width: 10rem;
+  min-width: 6.8rem;
+  transition: all .07s ease;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 4rem red, 0 0 6rem white;
+}
+
+kbd {
+  color: white;
+  display: block;
+  font-size: calc(1.6rem + (6 - 1.6) * ((100vw - 320px) / (1500 - 320)));
+  font-weight: 700;
+  margin: 0.5rem auto;
+  text-shadow: 0 0 .75rem cyan;
+}
+
+.sound {
+  color: #ffc600;
+  font-size: calc(1.2rem + (3 - 1.2) * ((100vw - 320px) / (1500 - 320)));
+  letter-spacing: .12rem;
+  text-shadow: 0 0 .25rem red;
+  text-transform: uppercase;
+}
+
+/* portrait mobile */
+@media screen and (max-width: 600px) {
+  body {
+    background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(0,0,0,0.75)), url(images/background-graffiti-600x1000.jpg) no-repeat center / cover;
+  }
+}
