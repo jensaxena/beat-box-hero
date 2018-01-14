@@ -1,25 +1,34 @@
-html {
+html,
+body {
   font-size: 62.5%; /* 10px */
+  min-height: 100vh;
 }
 
 body {
   background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(0,0,0,0.75)), url(images/background-graffiti-1500x750.jpg) no-repeat center / cover;
+  display: flex;
+  flex-direction: column;
   font-family: sans-serif;
   margin: 0;
-  min-height: 100vh;
-  padding: 0;
-  position: relative;
 }
 
-footer {
-  bottom: 0;
-  color: white;
-  left: 0;
-  font-size: calc(0.9rem + (1.4 - 0.9) * ((100vw - 320px) / (1500 - 320)));
-  position: absolute;
-  right: 0;
+header {
+  font-family: 'Permanent Marker', sans-serif;
+  margin: 5vh auto;
   text-align: center;
+}
 
+main {
+  flex: 1 0 auto;
+  margin: 0 auto;
+  max-width: 1500px;
+}
+
+footer > p {
+  color: white;
+  font-size: calc(0.9rem + (1.4 - 0.9) * ((100vw - 320px) / (1500 - 320)));
+  margin: 0 auto 0.5rem;
+  text-align: center;
 }
 
 a {
@@ -34,11 +43,19 @@ a:hover {
 }
 
 h1 {
-  font-family: 'Permanent Marker', sans-serif;
-  font-size: calc(4rem + (42 - 4) * ((100vw - 320px) / (1500 - 320)));
-  margin: 0 auto 5vh;
-  text-align: center;
-  text-shadow: 0.5rem 0.5rem 0.5rem grey, -0.2rem 0 0.75rem white;
+  color: black;
+  font-size: calc(4rem + (40 - 4) * ((100vw - 320px) / (1500 - 320)));
+  line-height: 1;
+  margin: 0 auto;
+  padding: 0;
+  text-shadow: -0.1rem -0.1rem 0.75rem cyan, 0.25rem 0.25rem 0.75rem navy;
+}
+
+h1 ~ p {
+  color: white;
+  font-size: calc(1.6rem + (16 - 1.6) * ((100vw - 320px) / (1500 - 320)));
+  margin: 0 auto;
+  text-shadow: -0.1rem -0.1rem 0.75rem orange, 0.15rem 0.15rem 0.75rem red;
 }
 
 .keys {
@@ -47,8 +64,22 @@ h1 {
   flex: 1;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0 auto;
+  margin: 0 auto 5vh;
+  max-width: 80vw;
   min-width: 320px;
+}
+
+.char {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto 5vh;
+  width: 100%;
+}
+
+.char .key {
+  border-radius: 5%;
+  max-width: 100rem;
+  padding: 2rem;
 }
 
 .key {
@@ -72,7 +103,7 @@ h1 {
 kbd {
   color: white;
   display: block;
-  font-size: calc(1.6rem + (6 - 1.6) * ((100vw - 320px) / (1500 - 320)));
+  font-size: calc(1.4rem + (6 - 1.4) * ((100vw - 320px) / (1500 - 320)));
   font-weight: 700;
   margin: 0.5rem auto;
   text-shadow: 0 0 .75rem cyan;
@@ -86,9 +117,20 @@ kbd {
   text-transform: uppercase;
 }
 
+.sing {
+  font-size: calc(4rem + (60 - 4) * ((100vw - 320px) / (1500 - 320)));
+}
+
 /* portrait mobile */
 @media screen and (max-width: 600px) {
   body {
     background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(0,0,0,0.75)), url(images/background-graffiti-600x1000.jpg) no-repeat center / cover;
+  }
+  header {
+    margin: 2.5vh auto;
+  }
+  .char,
+  .keys {
+    margin: 0 auto 2.5vh;
   }
 }
